@@ -1,0 +1,41 @@
+{
+    "Type": "UnencryptedConfiguration",
+    "NetworkConfigurations": [
+        {
+            "GUID": "ProtonVPN-Config",
+            "Name": "ProtonVPN",
+            "Type": "VPN",
+            "VPN": {
+                "Type": "OpenVPN",
+                "OpenVPN": {
+                    "AuthRetry": "interact",
+                    "Cipher": "AES-256-CBC",
+                    "CompLZO": "adaptive",
+                    "Port": 1194,
+                    "Proto": "udp",
+                    "Remote": [
+                        "212.102.51.241",
+                        "212.102.51.241",
+                        "212.102.51.241",
+                        "212.102.51.241",
+                        "212.102.51.241"
+                    ],
+                    "SaveCredentials": true,
+                    "ServerCARefs": [
+                        "protonvpn-ca"
+                    ],
+                    "UserAuthenticationType": "Password",
+                    "Username": "IxfV5GRDckMQFj79",
+                    "Password": "cZmkht6Z3jbOimRZ0SV3SgHBQz9kgcZv"
+                }
+            }
+        }
+    ],
+    "Certificates": [
+        {
+            "GUID": "protonvpn-ca",
+            "Type": "Authority",
+            "X509": "# ==============================================================================\n# Copyright (c) 2023 Proton AG (Switzerland)\n# Email: contact@protonvpn.com\n#\n# The MIT License (MIT)\n#\n# Permission is hereby granted, free of charge, to any person obtaining a copy\n# of this software and associated documentation files (the \"Software\"), to deal\n# in the Software without restriction, including without limitation the rights\n# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n# copies of the Software, and to permit persons to whom the Software is\n# furnished to do so, subject to the following conditions:\n#\n# The above copyright notice and this permission notice shall be included in all\n# copies or substantial portions of the Software.\n#\n# THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR # OTHERWISE, ARISING\n# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS\n# IN THE SOFTWARE.\n# ==============================================================================\n\n# The server you are connecting to is using a circuit in order to separate entry IP from exit IP\n# The same entry IP allows to connect to multiple exit IPs in the same data center.\n\n# If you want to explicitly select the exit IP corresponding to server JP-FREE#8 you need to\n# append a special suffix to your OpenVPN username.\n# Please use \"IxfV5GRDckMQFj79+b:0\" in order to enforce exiting through JP-FREE#8.\n\n# If you are a paying user you can also enable the ProtonVPN ad blocker (NetShield) or Moderate NAT:\n# Use: \"IxfV5GRDckMQFj79+b:0+f1\" to enable anti-malware filtering\n# Use: \"IxfV5GRDckMQFj79+b:0+f2\" to additionally enable ad-blocking filtering\n# Use: \"IxfV5GRDckMQFj79+b:0+nr\" to enable Moderate NAT\n# Note that you can combine the \"+nr\" suffix with other suffixes.\n\nclient\ndev tun\nproto udp\n\nremote 212.102.51.241 51820\nremote 212.102.51.241 5060\nremote 212.102.51.241 80\nremote 212.102.51.241 1194\nremote 212.102.51.241 4569\n\nremote-random\nresolv-retry infinite\nnobind\n\ncipher AES-256-GCM\n\nsetenv CLIENT_CERT 0\ntun-mtu 1500\nmssfix 0\npersist-key\npersist-tun\n\nreneg-sec 0\n\nremote-cert-tls server\nauth-user-pass\n\n\n-----BEGIN CERTIFICATE-----\nMIIFnTCCA4WgAwIBAgIUCI574SM3Lyh47GyNl0WAOYrqb5QwDQYJKoZIhvcNAQEL\nBQAwXjELMAkGA1UEBhMCQ0gxHzAdBgNVBAoMFlByb3RvbiBUZWNobm9sb2dpZXMg\nQUcxEjAQBgNVBAsMCVByb3RvblZQTjEaMBgGA1UEAwwRUHJvdG9uVlBOIFJvb3Qg\nQ0EwHhcNMTkxMDE3MDgwNjQxWhcNMzkxMDEyMDgwNjQxWjBeMQswCQYDVQQGEwJD\nSDEfMB0GA1UECgwWUHJvdG9uIFRlY2hub2xvZ2llcyBBRzESMBAGA1UECwwJUHJv\ndG9uVlBOMRowGAYDVQQDDBFQcm90b25WUE4gUm9vdCBDQTCCAiIwDQYJKoZIhvcN\nAQEBBQADggIPADCCAgoCggIBAMkUT7zMUS5C+NjQ7YoGpVFlfbN9HFgG4JiKfHB8\nQxnPPRgyTi0zVOAj1ImsRilauY8Ddm5dQtd8qcApoz6oCx5cFiiSQG2uyhS/59Zl\n5wqIkw1o+CgwZgeWkq04lcrxhhfPgJZRFjrYVezy/Z2Ssd18s3/FFNQ+2iV1KC2K\nz8eSPr50u+l9vEKsKiNGkJTdlWjoDKZM2C15i/h8Smi+PdJlx7WMTtYoVC1Fzq0r\naCPDQl18kspu11b6d8ECPWghKcDIIKuA0r0nGqF1GvH1AmbC/xUaNrKgz9AfioZL\nMP/l22tVG3KKM1ku0eYHX7NzNHgkM2JKnBBannImQQBGTAcvvUlnfF3AHx4vzx7H\nahpBz8ebThx2uv+vzu8lCVEcKjQObGwLbAONJN2enug8hwSSZQv7tz7onDQWlYh0\nEl5fnkrEQGbukNnSyOqTwfobvBllIPzBqdO38eZFA0YTlH9plYjIjPjGl931lFAA\n3G9t0x7nxAauLXN5QVp1yoF1tzXc5kN0SFAasM9VtVEOSMaGHLKhF+IMyVX8h5Iu\nIRC8u5O672r7cHS+Dtx87LjxypqNhmbf1TWyLJSoh0qYhMr+BbO7+N6zKRIZPI5b\nMXc8Be2pQwbSA4ZrDvSjFC9yDXmSuZTyVo6Bqi/KCUZeaXKof68oNxVYeGowNeQd\ng/znAgMBAAGjUzBRMB0GA1UdDgQWBBR44WtTuEKCaPPUltYEHZoyhJo+4TAfBgNV\nHSMEGDAWgBR44WtTuEKCaPPUltYEHZoyhJo+4TAPBgNVHRMBAf8EBTADAQH/MA0G\nCSqGSIb3DQEBCwUAA4ICAQBBmzCQlHxOJ6izys3TVpaze+rUkA9GejgsB2DZXIcm\n4Lj/SNzQsPlZRu4S0IZV253dbE1DoWlHanw5lnXwx8iU82X7jdm/5uZOwj2NqSqT\nbTn0WLAC6khEKKe5bPTf18UOcwN82Le3AnkwcNAaBO5/TzFQVgnVedXr2g6rmpp9\ngdedeEl9acB7xqfYfkrmijqYMm+xeG2rXaanch3HjweMDuZdT/Ub5G6oir0Kowft\nlA1ytjXRg+X+yWymTpF/zGLYfSodWWjMKhpzZtRJZ+9B0pWXUyY7SuCj5T5SMIAu\nx3NQQ46wSbHRolIlwh7zD7kBgkyLe7ByLvGFKa2Vw4PuWjqYwrRbFjb2+EKAwPu6\nVTWz/QQTU8oJewGFipw94Bi61zuaPvF1qZCHgYhVojRy6KcqncX2Hx9hjfVxspBZ\nDrVH6uofCmd99GmVu+qizybWQTrPaubfc/a2jJIbXc2bRQjYj/qmjE3hTlmO3k7V\nEP6i8CLhEl+dX75aZw9StkqjdpIApYwX6XNDqVuGzfeTXXclk4N4aDPwPFM/Yo/e\nKnvlNlKbljWdMYkfx8r37aOHpchH34cv0Jb5Im+1H07ywnshXNfUhRazOpubJRHn\nbjDuBwWS1/Vwp5AJ+QHsPXhJdl3qHc1szJZVJb3VyAWvG/bWApKfFuZX18tiI4N0\nEA==\n-----END CERTIFICATE-----"
+        }
+    ]
+}
